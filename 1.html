@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8">
+    <title> 나의 도서관 </title>
+   
+   <link rel="stylesheet" href="style.css">
+  </head>
+
+
+
+
+
+
+
+  <body>
+  <header>
+    
+    <!--1. 웹페이지 상단-->
+    <h1 > 나의 도서관 </h1>
+  
+    <p> HTML과 CSS를 공부 하는 페이지 </p>
+    <p class="important"> 클래스연습중임 </p>
+    <p> 일반 내용 해더자리  </p>
+  </header>
+    
+
+  <!--2. 메뉴영역 -->
+  <nav>
+    <a href="#"> 흠 </a>
+    <a href="#"> 도서목록 </a>
+    <a href="#"> 도서등록 </a>
+    <p> 여긴 nav 자리입니다. </p>
+    <p class="important"> 지금은 클래스연습중 </p>
+  </nav>
+
+  <main>
+    <section>
+      <h2> 도서 검색 </h2>
+
+      <form id="searchForm"> 
+        <label for="search"> 도서명 </label>
+        <input 
+            type="text" 
+            id="search" 
+            placeholder="책제목입력"
+            >
+
+        <button type="submit">검색</button> 
+      </form>
+
+
+        <p id="result"> </p>
+
+
+    </section>
+
+    <h2> 추천도서 </h2>
+    <h1> 이것도되나? </h1>
+    <ol>
+      <li> what is this</li>
+            <li> what is this</li>
+
+                  <li> what is this</li>
+
+    </ol>
+    <ul>
+      <li> 이건뭐지 </li>
+          <li> 이건뭐지 2</li>
+      <li> 이건뭐지 </li>
+
+    </ul>
+
+
+  </main>
+
+  <footer>
+    <p> 2026 open sorce midterm</p>
+  </footer>
+
+  <script>
+  //html 에서 form 찾기
+  const form =document.querySelector("#searchForm")
+  
+  //form에서 이벤트감지
+  form.addEventListener("submit",function(event){
+   //3. form의 기본 제출 동작을 막는다.
+    event.preventDefault();
+    //4. 사용자가 입력한 도서명을 가져온다. 
+    const keyword =document.querySelector("#search").value;
+    //5. 결과를 화면에 표시한다.
+    document.querySelector("#result").textContent ="검색한 도서명: "+keyword;
+
+  });
+</script>
+  </body>
+</html>
