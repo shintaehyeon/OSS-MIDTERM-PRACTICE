@@ -1,12 +1,168 @@
-h1{
-    color: blue;
-    font-size: 60px;
+
+body{
+    margin: 0; /* 기본 바깥 여백제거*/
+    background-color: #f1f5f9; /*연한 회색 배경*/ 
+    font-family: Arial,sans-serif; 
+    color: #333333; /*기본글자색*/
 }
 
-h2{
-    color: red;
+header{
+    background-color: #203650;
+    color: white;
+    padding:35px;
+    text-align: center; /*글자 가운데 정렬*/
 }
+
+header h1{
+    color: rgb(85, 255, 0);
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+header p {
+    color: #cbd5e1;
+}
+
+nav{
+    background-color: #304b68;
+    padding: 15px;
+    text-align: center;
+    font-size: 30px;
+}
+
+nav a{
+    color: white;
+    text-decoration: none; /*밑줄제거*/
+    margin: 15px;
+    font-weight: bold;
+}
+
+nav a:hover{
+    color: #facc15;
+}
+
+main{
+    width: 90%;
+    max-width: 1100px;
+    margin: 30px auto; /*위아래 30 좌우중앙*/
+}
+
+/*부모요소를 flex로 설정*/
+.content{
+    display: flex; /*자식 가로배치*/
+    gap: 20px;
+    align-items: flex-start;
+}
+
+
+.left{
+    flex: 7;
+    min-width: 0;
+}
+
+
+section h2{
+    color: #203650;
+    margin-top:  0;
+    margin-bottom: 20px;
+
+}
+
+/*입력창*/
+input{
+    padding: 12px;
+    border:1px solid #cbd5e1;
+    border-radius: 5px;
+    font-size: 15px;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+/*9. 검색버튼 */
+button{
+    background-color: #2563eb;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover{
+    background-color: #1d4ed8;
+}
+
+#result{
+    color: green;
+    font-weight: bold;
+
+}
+
+.book{
+    background-color: #eff6ff;
+    padding:20px;
+    margin-bottom: 15px;
+    border-left: 4px solid #2563eb;
+    border-radius: 6px;
+}
+.book h3{
+    color: #203650;
+    margin-top: 0;
+}
+
 
 .important{
-    color: green
+    color: green;
 }
+
+
+
+aside{
+    
+    flex: 3;
+    min-width: 0;
+    background-color: lightyellow;
+    padding: 20px;
+    border: 2px solid orange;
+    border-radius: 10px;
+    box-sizing: border-box;
+
+}
+
+aside h2{
+    color: #92400e;
+    margin-top: 0;
+}
+
+footer{
+    background-color: #203650;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+@media (max-width: 700px){
+    .content{
+        flex-direction: column;
+    }
+
+    .left,aside{
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+}
+/* 특정 영역 이동 테스트 
+#home {
+    min-height: 500px;
+}
+
+#books {
+    min-height: 600px;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+부드럽게 스크롤 */
+

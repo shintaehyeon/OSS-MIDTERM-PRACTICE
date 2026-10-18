@@ -2,96 +2,117 @@
 <html lang="ko">
   <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> 나의 도서관 </title>
-   
-   <link rel="stylesheet" href="style.css">
+
+    <link rel="stylesheet" href="style.css">
   </head>
 
 
-
-
-
-
-
-  <body>
+  <!--  바디부분 -->
+<body>
   <header>
-    
-    <!--1. 웹페이지 상단-->
-    <h1 > 나의 도서관 </h1>
-  
-    <p> HTML과 CSS를 공부 하는 페이지 </p>
-    <p class="important"> 클래스연습중임 </p>
-    <p> 일반 내용 해더자리  </p>
+    <h1>
+      나의 작은도서관
+    </h1>
+    <p> HTML, CSS, JavScript 연습 </p>
   </header>
-    
 
-  <!--2. 메뉴영역 -->
+
+
+
+  <!-- 메뉴영역 -->
   <nav>
-    <a href="#"> 흠 </a>
-    <a href="#"> 도서목록 </a>
-    <a href="#"> 도서등록 </a>
-    <p> 여긴 nav 자리입니다. </p>
-    <p class="important"> 지금은 클래스연습중 </p>
+    <a href="#home"> 홈</a>
+    <a href="#books"> 도서목록</a>
+    <a href="#">도서등록</a>
   </nav>
 
+
+  <!-- 메인 -->
   <main>
-    <section>
-      <h2> 도서 검색 </h2>
 
-      <form id="searchForm"> 
-        <label for="search"> 도서명 </label>
-        <input 
-            type="text" 
-            id="search" 
-            placeholder="책제목입력"
-            >
+    <!-- 부모요소: css에서 flex적용-->
+     <div class="content">
+     
+      <!-- 왼쪽영역 -->
+        <div class="left"> 
 
-        <button type="submit">검색</button> 
-      </form>
+          <section id="home">
+            <h2> 도서검색 </h2>
+            <form id="searchForm">
+              <label for="search">도서명</label>
+              <input
+                    type="text"
+                    id="search"
+                    name="keyword"
+                    placeholder="책 제목 입력"
+                    required
+              >
+              <button type="submit">
+                검색
+              </button>
+            </form>
+
+            <!-- Javascript 결과출력-->
+            <p id="result"></p>
+
+          </section>
+
+          <!-- section 2 추천도서 -->
+          <section id="books">
+            <h2> 추천도서 </h2>
+            <!-- 독립콘텐츠 article-->
+             <article class="book">
+              <h2> 도서 검색</h2>
+              <h3>html 기초</h3>
+              <p>저자: 신태현</p>
+              <p>HTML의 기본구조를 배우는 책</p>
+             </article>
+             <article class="book">
+              <h3>CSS 기초</h3>
+              <p>저자: 신태현</p>
+              <p>CSS의 기본구조를 배우는 책</p>
+             </article>
+          </section>
+        </div>
+
+        <!--오른쪽영역 aside-->
+          <aside>
+            <h2> 공지사항</h2>
+            <p> 운영시간:9:00~20:00</p>
+            <p> 일요일 휴관</p>
+            <h3> 인기도서 </h3>
+
+            <ul>
+              <li> html기초</li>
+                            <li> css기초</li>
+                                          <li> JS기초</li>
 
 
-        <p id="result"> </p>
+            </ul>
+          </aside>
 
 
-    </section>
 
-    <h2> 추천도서 </h2>
-    <h1> 이것도되나? </h1>
-    <ol>
-      <li> what is this</li>
-            <li> what is this</li>
-
-                  <li> what is this</li>
-
-    </ol>
-    <ul>
-      <li> 이건뭐지 </li>
-          <li> 이건뭐지 2</li>
-      <li> 이건뭐지 </li>
-
-    </ul>
-
+     </div>
+  
 
   </main>
 
   <footer>
-    <p> 2026 open sorce midterm</p>
+    <p> 오픈소스스튜디오 중간고사 </p>
   </footer>
 
-  <script>
-  //html 에서 form 찾기
-  const form =document.querySelector("#searchForm")
-  
-  //form에서 이벤트감지
-  form.addEventListener("submit",function(event){
-   //3. form의 기본 제출 동작을 막는다.
-    event.preventDefault();
-    //4. 사용자가 입력한 도서명을 가져온다. 
-    const keyword =document.querySelector("#search").value;
-    //5. 결과를 화면에 표시한다.
-    document.querySelector("#result").textContent ="검색한 도서명: "+keyword;
+  <script src="script.js"></script>
 
-  });
-</script>
-  </body>
+
+
+</body>
+
+
+
+
+
+
 </html>
